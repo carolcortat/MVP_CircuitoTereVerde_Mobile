@@ -9,6 +9,19 @@ if (!token) {
 
 let eventoEditandoId = null;
 
+// Se o servidor disser que o token não é mais válido (expirado, por exemplo),
+// limpa a sessão e manda de volta pro login com uma mensagem clara.
+function tratarSessaoExpirada(resposta) {
+  if (resposta.status === 401) {
+    localStorage.removeItem('token');
+    localStorage.removeItem('adminEmail');
+    alert('Sua sessão expirou. Faça login novamente.');
+    window.location.href = '../login/index.html';
+    return true;
+  }
+  return false;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const addBtn = document.getElementById('add-event-btn');
   const cancelBtn = document.getElementById('cancel-add-event-btn');
@@ -78,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       const dados = await resposta.json();
+
+      if (tratarSessaoExpirada(resposta)) return;
 
       if (!resposta.ok) {
         alert(dados.erro || 'Erro ao salvar evento.');
@@ -155,6 +170,8 @@ async function excluirEvento(id) {
     });
 
     const dados = await resposta.json();
+
+    if (tratarSessaoExpirada(resposta)) return;
 
     if (!resposta.ok) {
       alert(dados.erro || 'Erro ao excluir evento.');

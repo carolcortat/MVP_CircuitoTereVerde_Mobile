@@ -21,6 +21,11 @@ body {
   line-height: 1.6;
 }
 
+/* Trava o scroll da página quando o menu mobile está aberto */
+body.menu-aberto {
+  overflow: hidden;
+}
+
 /* HEADER */
 .cabecalho {
   display: flex;

@@ -5,11 +5,19 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.querySelector('.cabecalho nav');
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var aberto = nav.classList.toggle('nav-aberta');
+  function setMenuAberto(aberto) {
+    nav.classList.toggle('nav-aberta', aberto);
+    document.body.classList.toggle('menu-aberto', aberto);
+    if (toggle) {
       toggle.classList.toggle('ativo', aberto);
       toggle.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+    }
+  }
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var aberto = !nav.classList.contains('nav-aberta');
+      setMenuAberto(aberto);
     });
   }
 
@@ -27,12 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.cabecalho nav a:not(.submenu > a)').forEach(function (link) {
     link.addEventListener('click', function () {
       if (nav && nav.classList.contains('nav-aberta')) {
-        nav.classList.remove('nav-aberta');
-        if (toggle) {
-          toggle.classList.remove('ativo');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
+        setMenuAberto(false);
       }
     });
   });
 });
+

@@ -1,3 +1,9 @@
+// Se já existe uma sessão salva, pula direto pro painel admin
+// em vez de mostrar o formulário de login de novo.
+if (localStorage.getItem('token')) {
+  window.location.href = '../admin/admin-index.html';
+}
+
 async function logar() {
   const email = document.getElementById('usuario').value;
   const senha = document.getElementById('senha').value;
