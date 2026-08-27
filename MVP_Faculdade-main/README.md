@@ -1,0 +1,98 @@
+# 🌱 Circuito Terê Verde
+
+Bem-vindo(a) ao repositório do projeto **Circuito Terê Verde**!  
+Este projeto nasceu com o objetivo de conectar pessoas à natureza exuberante de Teresópolis através da tecnologia. A plataforma fornece informações atualizadas sobre trilhas, cachoeiras, biodiversidade e eventos nos principais parques da cidade, incentivando o turismo consciente e sustentável.  
+
+---
+
+## 👥 Equipe
+
+Este projeto foi desenvolvido por:
+
+- **Caroline da Silva Cortat**  
+- **Marco Antonio de Moura Junior**  
+- **Renan Lopes Linhares da Silva**  
+
+---
+
+## 🌄 Situação-Problema Escolhida
+
+### Circuito Terê Verde
+
+Teresópolis está localizada em uma região montanhosa cercada por vales e é contemplada com três unidades de conservação ambiental:  
+- Parque Nacional da Serra dos Órgãos  
+- Parque Estadual dos Três Picos  
+- Parque Natural Municipal Montanhas de Teresópolis
+
+Essas áreas são essenciais para o ecoturismo e preservação ambiental, mas também representam um desafio para a expansão urbana. O projeto “Circuito Terê Verde” visa destacar o potencial turístico sustentável da região e ampliar o acesso à informação sobre suas atrações naturais.
+
+---
+
+## Principais tecnologias utilizadas
+
+<div>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="50" height="50">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="50" height="50">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" width="50" height="50">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="50" height="50">
+  <img src="https://skillicons.dev/icons?i=express" width="50" height="50">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg" width="50" height="50">
+</div>
+
+---
+
+## 🚀 Descrição do MVP
+
+**Terê Verde Online** é uma plataforma digital com:
+
+- Interface intuitiva e responsiva  
+- Informações sobre os parques, trilhas, cachoeiras e eventos 
+
+A ideia é que tanto turistas quanto moradores tenham um canal confiável e prático para explorar o melhor da natureza teresopolitana 🌿✨
+
+---
+
+### Prototipação
+
+- Protótipos feito no Adobe Illustrator e salvos em .PNG
+- Foram definidas 3 telas principais para prototipação: Página Inicial, Página de Login do Administrador, Página de Eventos e Página de um dos Parques
+
+---
+
+## Público-Alvo
+
+O público-alvo principal do projeto "Circuito Terê Verde" são turistas e visitantes que buscam atividades de ecoturismo e aventura em Teresópolis, como trilhas, cachoeiras e escaladas. Eles querem informações atualizadas e fáceis de acessar sobre a biodiversidade e os atrativos naturais da região.
+
+Indiretamente, o projeto também beneficia os administradores das unidades de conservação, que vão utilizar a plataforma para gerenciar e disponibilizar essas informações.
+
+---
+
+## ▶️ Como Executar o Projeto
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) instalado na máquina
+
+### Passo a passo
+
+**1. Clone o repositório**
+```bash
+git clone https://github.com/RennanIdev/MVP_Faculdade.git
+```
+
+**2. Acesse a pasta do backend**
+```bash
+cd MVP_Faculdade/src/backend
+```
+
+**3. Instale as dependências**
+```bash
+npm install
+```
+
+**4. Inicie o servidor**
+```bash
+node server.js
+```
+
+**5. Acesse no navegador**

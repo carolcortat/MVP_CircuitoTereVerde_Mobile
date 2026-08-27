@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circuito Terê Verde</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="assets/images/logo.png" alt="logocircuito" id="logo" />
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li class="submenu">
+                    <a href="#">Parques</a>
+                    <ul class="dropdown">
+                        <li><a href="pages/parques/parque-serra-dos-orgaos.html">Serra dos Órgãos</a></li>
+                        <li><a href="pages/parques/parque-tres-picos.html">Três Picos</a></li>
+                        <li><a href="pages/parques/parque-montanhas-de-teresopolis.html">Montanhas de Teresópolis</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="pages/eventos/index.html">Eventos</a></li>
+                <li><a href="./pages/login/index.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="Bem-vindo">Bem-vindo ao Circuito Terê Verde</h2>
+            <p class="pbemvindo">
+                Explore as belezas naturais de Teresópolis através dos seus parques e trilhas incríveis.
+                Descubra a biodiversidade e os eventos especiais que ocorrem na nossa região.
+            </p>
+        </section>
+
+        <section class="carrossel-ss">
+            <div class="carrossel">
+                <img id="carrossel-imagem" src="" alt="Imagem do Carrossel" />
+                <div id="image-caption" class="image-caption"></div>
+                <button id="voltar-botao" class="carrossel-botao voltar-botao">&#10094;</button>
+                <button id="proximo-botao" class="carrossel-botao proximo-botao">&#10095;</button>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="parques-em-destaque">Parques em destaque</h2>
+        </section>
+
+        <section class="card-container">
+            <a href="pages/parques/parque-serra-dos-orgaos.html" class="card-link">
+                <article class="card-item">
+                    <div class="card-img">
+                        <img src="assets/images/fotos-parques/parque-serra-dos-orgaos.jpg"
+                            alt="Parque Nacional da Serra dos Órgãos" />
+                    </div>
+                    <h3>Parque Nacional da Serra dos Órgãos</h3>
+                    <p>Famoso pelas trilhas desafiadoras e paisagens incríveis.</p>
+                </article>
+            </a>
+
+            <a href="pages/parques/parque-tres-picos.html" class="card-link">
+                <article class="card-item">
+                    <div class="card-img">
+                        <img src="assets/images/fotos-parques/parque-tres-picos.jpg"
+                            alt="Parque Estadual dos Três Picos" />
+                    </div>
+                    <h3>Parque Estadual dos Três Picos</h3>
+                    <p>Ideal para montanhismo e apreciar a rica biodiversidade.</p>
+                </article>
+            </a>
+
+            <a href="pages/parques/parque-montanhas-de-teresopolis.html" class="card-link">
+                <article class="card-item">
+                    <div class="card-img">
+                        <img src="assets/images/fotos-parques/parque-montanha.jpg"
+                            alt="Parque Natural Municipal Montanhas de Teresópolis" />
+                    </div>
+                    <h3>Parque Natural Municipal Montanhas de Teresópolis</h3>
+                    <p>Perfeito para trilhas leves e contato com a natureza.</p>
+                </article>
+            </a>
+        </section>
+    </main>
+
+    <section class="Titulo">
+        <div class="linha">
+            <span></span>
+            <h1>Normas de visitação</h1>
+            <span></span>
+        </div>
+        <img src="assets/images/normas-de-visitacao.png" alt="">
+    </section>
+
+    <footer class="contato">
+        <h1>Contate - nos</h1>
+        <p>Telefone:4002 - 8922</p>
+        <p>Instagram:@Circuitotereverde</p>
+        <p>Whatsapp:4002 - 8922</p>
+        <p class="rodape">&copy; 2025 Circuito Terê Verde. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/mobile-nav.js"></script>
+</body>
+
+</html>

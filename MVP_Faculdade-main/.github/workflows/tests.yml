@@ -1,0 +1,34 @@
+name: Testes Automatizados
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '24'
+
+      - name: Instalar dependências
+        run: npm install
+        working-directory: src/backend
+
+      - name: Iniciar servidor em background
+        run: node src/backend/server.js &
+        
+      - name: Aguardar servidor iniciar
+        run: sleep 3
+
+      - name: Rodar testes
+        run: npm test
+        working-directory: src/backend

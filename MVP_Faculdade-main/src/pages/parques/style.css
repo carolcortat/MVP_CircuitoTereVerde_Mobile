@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --verde-escuro: #2d4a2d;
+  --verde-medio: #4a7c59;
+  --verde-palido: #c8ddc8;
+  --verde-bio: #d8e8d0;
+  --creme: #f5f0e8;
+  --texto-escuro: #1a2e1a;
+  --branco: #ffffff;
+  --sombra: 0 8px 32px rgba(45, 74, 45, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--creme);
+  color: var(--texto-escuro);
+  line-height: 1.6;
+}
+
+/* HEADER */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-medio) 100%);
+  padding: 0 48px;
+  height: 90px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(45, 74, 45, 0.3);
+}
+
+#logo { width: 160px; height: auto; flex-shrink: 0; }
+nav { display: flex; justify-content: flex-end; width: 100%; }
+nav ul { display: flex; gap: 4px; list-style: none; align-items: center; }
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255,255,255,0.9);
+  padding: 8px 18px;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+}
+
+nav a:hover { color: var(--branco); background: rgba(255,255,255,0.15); text-decoration: none; }
+
+.submenu { position: relative; }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--verde-escuro);
+  list-style: none;
+  padding: 8px 0;
+  min-width: 220px;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  z-index: 1000;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.dropdown li a:hover { background: rgba(255,255,255,0.1); color: var(--branco); padding-left: 26px; }
+.submenu:hover .dropdown { display: block; }
+
+/* MENU HAMBURGUER (mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--branco);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.menu-toggle.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.ativo span:nth-child(2) { opacity: 0; }
+.menu-toggle.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* HERO DO PARQUE */
+.Bem-vindo {
+  background: linear-gradient(160deg, var(--verde-escuro) 0%, #3a6647 100%);
+  padding: 64px 48px;
+  text-align: center;
+  color: var(--branco);
+}
+
+.Bem-vindo h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--verde-palido);
+  margin-bottom: 16px;
+}
+
+.descricao h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--branco);
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.descricao p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.8);
+  max-width: 760px;
+  margin: 0 auto 12px;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* CARDS DE INFORMAÇÃO */
+main { padding: 40px 32px; }
+
+.cards-informacoes {
+  background: var(--branco);
+  border: 1px solid rgba(45, 74, 45, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(45, 74, 45, 0.07);
+  padding: 32px;
+  margin: 24px auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.cards-informacoes h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--verde-escuro);
+  margin-bottom: 24px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.cards-informacoes h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 2px;
+  background: var(--verde-medio);
+  border-radius: 2px;
+}
+
+.cards-informacoes ul { list-style: none; padding-left: 0; }
+
+.cards-informacoes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #3a5a3a;
+}
+
+.cards-informacoes li img {
+  width: 180px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.cards-informacoes li strong { color: var(--verde-escuro); font-weight: 600; }
+
+.texto {
+  text-align: center;
+  color: #6b9e7a;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* BIODIVERSIDADE */
+.secao-bio {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 32px auto;
+  padding: 0 32px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+}
+
+.card-biodiversidade {
+  background: linear-gradient(135deg, #e8f2e8, var(--verde-bio));
+  padding: 32px;
+  flex: 1;
+  min-width: 260px;
+  max-width: 480px;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid rgba(45, 74, 45, 0.1);
+}
+
+.card-biodiversidade h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--verde-escuro);
+  font-size: 26px;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.card-biodiversidade p { font-size: 14px; color: #4a6a4a; margin-bottom: 12px; }
+
+ul.fauna-flora { list-style: none; padding: 0; }
+ul.fauna-flora li {
+  display: block;
+  text-align: center;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #3a5a3a;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(45, 74, 45, 0.08);
+}
+
+/* LOCALIZAÇÃO */
+#como-chegar {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.mapa-responsivo {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.mapa-responsivo iframe { display: block; }
+
+/* FOOTER */
+footer.contato {
+  background: var(--texto-escuro);
+  padding: 48px 48px 32px;
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+footer.contato h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--verde-palido);
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 16px;
+}
+
+footer.contato p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 2; }
+
+.rodape {
+  color: rgba(255,255,255,0.35) !important;
+  font-size: 13px !important;
+  text-align: center !important;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .cabecalho { padding: 0 20px; height: 70px; }
+  #logo { width: 120px; }
+  .Bem-vindo { padding: 40px 24px; }
+  .descricao h1 { font-size: 28px; }
+  main { padding: 24px 16px; }
+  footer.contato { padding: 32px 24px 24px; }
+
+  .menu-toggle { display: flex; }
+
+  nav { position: static; width: auto; }
+
+  nav ul {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 0;
+    background: var(--verde-escuro);
+    max-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: none;
+    z-index: 150;
+  }
+
+  nav.nav-aberta ul { max-height: calc(100vh - 70px); padding: 8px 0; box-shadow: 0 12px 24px rgba(0,0,0,0.25); }
+
+  nav a { font-size: 15px; padding: 18px 24px; border-radius: 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+  .submenu { width: 100%; }
+
+  .dropdown {
+    display: none;
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: rgba(0,0,0,0.15);
+  }
+
+  .submenu:hover .dropdown { display: none; }
+  .submenu.submenu-aberto .dropdown { display: block; }
+
+  .dropdown li a { padding: 14px 24px 14px 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+  /* CARDS DE TRILHAS/CACHOEIRAS: imagem em cima, texto embaixo */
+  .cards-informacoes {
+    padding: 20px;
+    margin: 16px auto;
+    border-radius: 16px;
+  }
+
+  .cards-informacoes h3 { font-size: 22px; margin-bottom: 20px; }
+
+  .cards-informacoes li {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .cards-informacoes li img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .secao-bio {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+    gap: 16px;
+  }
+
+  .card-biodiversidade {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 24px;
+  }
+
+  .card-biodiversidade h3 { font-size: 22px; }
+}
+
+@media (max-width: 400px) {
+  .cards-informacoes li img { height: 160px; }
+}

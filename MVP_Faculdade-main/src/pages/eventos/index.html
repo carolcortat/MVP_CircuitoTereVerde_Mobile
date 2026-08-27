@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header class="cabecalho">
+        <a href="../../index.html"><img src="../../assets/images/logo.png" alt="logocircuito" id="logo" /></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Início</a></li>
+                <li class="submenu">
+                    <a href="#">Parques</a>
+                    <ul class="dropdown">
+                        <li><a href="../parques/parque-serra-dos-orgaos.html">Serra dos Órgãos</a></li>
+                        <li><a href="../parques/parque-tres-picos.html">Três Picos</a></li>
+                        <li><a href="../parques/parque-montanhas-de-teresopolis.html">Montanhas de Teresópolis</a></li>
+                    </ul>
+                </li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="../login/index.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <section class="secao-eventos">
+    <h2 class="titulo-eventos">Eventos</h2>
+    <div class="container-cards-eventos" id="container-eventos">
+      <p class="carregando">Carregando eventos...</p>
+    </div>
+  </section>
+
+  <footer class="contato">
+    <h1>Contate - nos</h1>
+    <p>Telefone:4002 - 8922</p>
+    <p>Instagram:@Circuitotereverde</p>
+    <p>Whatsapp:4002 - 8922</p>
+    <p class="rodape">&copy; 2025 Circuito Terê Verde. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    async function carregarEventos() {
+      const container = document.getElementById('container-eventos');
+
+      try {
+        const resposta = await fetch('/api/eventos');
+        const eventos = await resposta.json();
+
+        if (eventos.length === 0) {
+          container.innerHTML = '<p class="sem-eventos">Nenhum evento cadastrado no momento.</p>';
+          return;
+        }
+
+        container.innerHTML = eventos.map(evento => `
+          <div class="card-evento">
+            ${evento.imagem_url ? `<img src="${evento.imagem_url}" alt="${evento.nome}" onerror="this.style.display='none'">` : ''}
+            <h3>${evento.nome}</h3>
+            ${evento.data ? `<p><strong>Data:</strong> ${formatarData(evento.data)}</p>` : ''}
+            ${evento.horario ? `<p><strong>Horário:</strong> ${evento.horario}</p>` : ''}
+            ${evento.local ? `<p><strong>Local:</strong> ${evento.local}</p>` : ''}
+            ${evento.descricao ? `<p><strong>Descrição:</strong> ${evento.descricao}</p>` : ''}
+          </div>
+        `).join('');
+
+      } catch (erro) {
+        container.innerHTML = '<p class="sem-eventos">Erro ao carregar eventos. Verifique se o servidor está rodando.</p>';
+        console.error('Erro:', erro);
+      }
+    }
+
+    function formatarData(data) {
+      const [ano, mes, dia] = data.split('-');
+      return `${dia}/${mes}/${ano}`;
+    }
+
+    carregarEventos();
+  </script>
+  <script src="../../assets/js/mobile-nav.js"></script>
+</body>
+</html>
