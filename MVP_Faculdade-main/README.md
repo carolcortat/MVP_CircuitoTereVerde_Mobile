@@ -9,9 +9,7 @@ Este projeto nasceu com o objetivo de conectar pessoas à natureza exuberante de
 
 Este projeto foi desenvolvido por:
 
-- **Caroline da Silva Cortat**  
-- **Marco Antonio de Moura Junior**  
-- **Renan Lopes Linhares da Silva**  
+- **Caroline da Silva Cortat**   
 
 ---
 
