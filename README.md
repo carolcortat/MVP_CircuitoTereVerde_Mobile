@@ -75,12 +75,12 @@ Indiretamente, o projeto também beneficia os administradores das unidades de co
 
 **1. Clone o repositório**
 ```bash
-git clone https://github.com/RennanIdev/MVP_Faculdade.git
+git clone https://github.com/carolcortat/MVP_CircuitoTereVerde_Mobile.git
 ```
 
 **2. Acesse a pasta do backend**
 ```bash
-cd MVP_Faculdade/src/backend
+cd MVP_Faculdade-principal/src/backend
 ```
 
 **3. Instale as dependências**
